@@ -12,9 +12,9 @@ import FampayLogo from '../../Media/svg/fampay-logo.svg';
 import style from './Header.module.css';
 
 const Header = () => (
-  <div className={style.header}>
+  <header className={style.header}>
     <img src={FampayLogo} alt="FamPay" />
-  </div>
+  </header>
 );
 
 export default Header;
