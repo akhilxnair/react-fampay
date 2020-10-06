@@ -35,7 +35,7 @@
 
 .hiddenContent {
   overflow: hidden;
-  height: 0px;
+  padding: 5px;
 }
 
 .hiddenContent > div {

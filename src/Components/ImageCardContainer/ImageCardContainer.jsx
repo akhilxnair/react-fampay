@@ -22,14 +22,14 @@ const ImageCardContainer = ({ cardDetails }) => {
     {
       card: { position: 'relative', height: 'auto' },
       backButton: { height: '0px', cursor: 'pointer', visibility: 'hidden' },
-      content: { height: '0px', padding: '0px' },
+      content: { display: 'none' },
     },
     {
       card: {
         height: '100vh', width: '320px', top: '0px', position: 'absolute', cursor: 'default',
       },
       backButton: { height: '60px', visibility: 'visible' },
-      content: { height: '520px', cursor: 'default', padding: '5px' },
+      content: { display: 'block', cursor: 'default' },
     },
   );
 
