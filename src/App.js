@@ -3,7 +3,7 @@
  */
 
 // Import Modules
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 // Import Components
 import Header from './Components/Header/Header';
@@ -23,12 +23,12 @@ import FetchCardsAPI from './Services/api';
 const App = () => {
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const appRef = useRef(null);
 
   useEffect(() => {
     FetchCardsAPI().then((cardsData) => {
       setIsLoading(false);
       setCards(cardsData);
-      console.log(cardsData);
     });
   }, []);
 
@@ -37,14 +37,14 @@ const App = () => {
       HC1: <SmallCardContainer cardDetails={cardDetails} key={cardDetails.id} />,
       HC3: <BigDisplayCardContainer cardDetails={cardDetails} key={cardDetails.id} />,
       HC4: <CenterCardContainer cardDetails={cardDetails} key={cardDetails.id} />,
-      HC5: <ImageCardContainer cardDetails={cardDetails} key={cardDetails.id} />,
+      HC5: <ImageCardContainer cardDetails={cardDetails} appRef={appRef} key={cardDetails.id} />,
       HC6: <SmallCardArrowContainer cardDetails={cardDetails} key={cardDetails.id} />,
     };
     return cardTypes[cardDetails.design_type];
   };
 
   return (
-    <div className={style.app}>
+    <div className={style.app} ref={appRef}>
       <Header />
       <div className={style.cardsContainerWrap}>
         <div className={style.cardsContainer}>

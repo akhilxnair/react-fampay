@@ -17,7 +17,7 @@ const SmallCardContainer = ({ cardDetails }) => (
   <div className={style.smallCardContainer}>
     {cardDetails.is_scrollable ? (
       <div className={style.scrollableContainer}>
-        <Page width={320} height={60} contentWidth="auto" contentHeight="auto" direction="horizontal">
+        <Page width="auto" height={60} contentWidth="auto" contentHeight="auto" direction="horizontal">
           {cardDetails.cards.map((card) => (
             <SmallCard arrow={false} cardDetails={card} key={card.name} />
           ))}

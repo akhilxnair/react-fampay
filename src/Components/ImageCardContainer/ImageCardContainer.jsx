@@ -3,7 +3,7 @@
  */
 
 // Import Modules
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { motion, useCycle } from 'framer-motion';
 
@@ -16,8 +16,9 @@ import MoneyBagIcon from '../../Media/svg/money-bag.svg';
 import MoneyWingIcon from '../../Media/svg/money-wings.svg';
 import FireIcon from '../../Media/svg/fire.svg';
 
-const ImageCardContainer = ({ cardDetails }) => {
+const ImageCardContainer = ({ cardDetails, appRef }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [contentHeight, setContentHeight] = useState(appRef.current.offsetHeight);
   const [animate, expand] = useCycle(
     {
       card: { position: 'relative', height: 'auto' },
@@ -26,12 +27,16 @@ const ImageCardContainer = ({ cardDetails }) => {
     },
     {
       card: {
-        height: '100vh', width: '320px', top: '0px', position: 'absolute', cursor: 'default',
+        height: contentHeight, top: '0px', left: '0', position: 'absolute', cursor: 'default',
       },
       backButton: { height: '60px', visibility: 'visible' },
       content: { display: 'block', cursor: 'default' },
     },
   );
+
+  useEffect(() => {
+    setContentHeight(appRef.current.offsetHeight);
+  }, [appRef.current.offsetHeight]);
 
   const toggleExpand = (shouldExpand) => {
     if (shouldExpand) {
@@ -115,6 +120,7 @@ const ImageCardContainer = ({ cardDetails }) => {
 
 ImageCardContainer.propTypes = {
   cardDetails: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.object, PropTypes.array]).isRequired,
+  appRef: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.object, PropTypes.array]).isRequired,
 };
 
 export default ImageCardContainer;
