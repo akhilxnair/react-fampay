@@ -3,7 +3,7 @@
  */
 
 const FetchCardsAPI = async () => {
-  const url = 'http://www.mocky.io/v2/5ed79368320000a0cc27498b';
+  const url = 'https://www.mocky.io/v2/5ed79368320000a0cc27498b';
   try {
     const response = await fetch(url);
     if (response.status !== 200) alert(`API Fail , I repeat API Fail. Error - ${response.status}`);
