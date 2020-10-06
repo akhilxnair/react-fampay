@@ -58,17 +58,17 @@ const BigDisplayCard = ({ card }) => {
       >
         <div className={style.cardTitle}>
           {card.formatted_title?.entities.map((entity) => (
-            <div style={{ color: entity.color }}>{entity.text}</div>
+            <div style={{ color: entity.color }} key={entity.text}>{entity.text}</div>
           ))}
         </div>
         <div className={style.cardDescription}>
           {card.formatted_description?.entities.map((entity) => (
-            <div style={{ color: entity.color }}>{entity.text}</div>
+            <div style={{ color: entity.color }} key={entity.text}>{entity.text}</div>
           ))}
         </div>
         <div className={style.cardActions}>
           {card.cta.map((action) => (
-            <a href={action.url}>
+            <a href={action.url} key={action.text}>
               <button className={style.cardButton} type="button" style={{ backgroundColor: action.bg_color, color: action.text_color }}>{action.text}</button>
             </a>
           ))}
@@ -94,7 +94,7 @@ const BigDisplayCard = ({ card }) => {
 
 const BigDisplayCardContainer = ({ cardDetails }) => (
   <div className={style.bigDisplayCardContainer}>
-    {cardDetails.cards.map((card) => <BigDisplayCard card={card} />)}
+    {cardDetails.cards.map((card) => <BigDisplayCard card={card} key={card.name} />)}
   </div>
 );
 

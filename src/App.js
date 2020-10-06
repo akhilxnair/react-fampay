@@ -12,6 +12,7 @@ import ImageCardContainer from './Components/ImageCardContainer/ImageCardContain
 import CenterCardContainer from './Components/CenterCardContainer/CenterCardContainer';
 import SmallCardArrowContainer from './Components/SmallCardArrowContainer/SmallCardArrowContainer';
 import SmallCardContainer from './Components/SmallCardContainer/SmallCardContainer';
+import Loader from './Components/Loader/Loader';
 
 // Import Styles
 import style from './App.module.css';
@@ -21,9 +22,14 @@ import FetchCardsAPI from './Services/api';
 
 const App = () => {
   const [cards, setCards] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    FetchCardsAPI().then((cardsData) => { setCards(cardsData); console.log(cardsData); });
+    FetchCardsAPI().then((cardsData) => {
+      setIsLoading(false);
+      setCards(cardsData);
+      console.log(cardsData);
+    });
   }, []);
 
   const decideCard = (cardDetails) => {
@@ -42,7 +48,11 @@ const App = () => {
       <Header />
       <div className={style.cardsContainerWrap}>
         <div className={style.cardsContainer}>
-          {cards.map((card) => decideCard(card))}
+          {isLoading ? <Loader /> : (
+            <>
+              {cards.map((card) => decideCard(card))}
+            </>
+          )}
         </div>
       </div>
     </div>

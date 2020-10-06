@@ -19,14 +19,14 @@ const SmallCardContainer = ({ cardDetails }) => (
       <div className={style.scrollableContainer}>
         <Page width={320} height={60} contentWidth="auto" contentHeight="auto" direction="horizontal">
           {cardDetails.cards.map((card) => (
-            <SmallCard arrow={false} cardDetails={card} />
+            <SmallCard arrow={false} cardDetails={card} key={card.name} />
           ))}
         </Page>
       </div>
     ) : (
       <div className={style.nonScrollableContainer}>
         {cardDetails.cards.map((card) => (
-          <SmallCard arrow={false} cardDetails={card} />
+          <SmallCard arrow={false} cardDetails={card} key={card.name} />
         ))}
       </div>
     )}

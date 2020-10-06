@@ -5,18 +5,19 @@
 // Import Modules
 import React from 'react';
 import PropTypes from 'prop-types';
-import { motion } from 'framer-motion';
+import { motion, useCycle, AnimatePresence } from 'framer-motion';
 
 // Import Styles
 import style from './ImageCardContainer.module.css';
 
 const ImageCardContainer = ({ cardDetails }) => {
-  console.log('hello');
+  const [animate, cycleCard] = useCycle();
+  console.log('Image Card Container');
   return (
-    <div className={style.imageCardContainer} onTap={() => console.log('Hell')}>
+    <div className={style.imageCardContainer}>
       {cardDetails.cards.map((card) => (
         <motion.div
-          onClick={{ scale: 2 }}
+          key={card.name}
           className={style.imageCard}
           style={{ backgroundImage: `url(${card.bg_image.image_url})` }}
         />

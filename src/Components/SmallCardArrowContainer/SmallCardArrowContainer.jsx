@@ -15,7 +15,7 @@ import style from './ScrollCardArrowContainer.module.css';
 const SmallCardArrowContainer = ({ cardDetails }) => (
   <div className={style.smallCardArrowContainer}>
     {cardDetails.cards.map((card) => (
-      <SmallCard arrow cardDetails={card} />
+      <SmallCard arrow cardDetails={card} key={card.name} />
     ))}
   </div>
 );

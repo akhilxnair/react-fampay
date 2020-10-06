@@ -22,7 +22,7 @@ const CenterCardContainer = ({ cardDetails }) => (
         <div className={style.description}>{description}</div>
         <div className={style.cardActions}>
           {cta.map((action) => (
-            <a href={action.url}>
+            <a href={action.url} key={action.text}>
               <button className={style.cardButton} type="button" style={{ backgroundColor: action.bg_color, color: action.text_color }}>{action.text}</button>
             </a>
           ))}
