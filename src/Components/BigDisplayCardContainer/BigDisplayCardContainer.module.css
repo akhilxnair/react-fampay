@@ -1,0 +1,79 @@
+/*
+ * Copyright ©2020 Akhil Nair - All rights reserved.
+ */
+
+.bigDisplayCardContainer {
+  overflow-x: hidden;
+  border-radius: 12px;
+  background-color: #fff;
+  cursor: default !important;
+}
+
+.cardWrap {
+  position: relative;
+}
+
+.bigDisplayCard {
+  z-index: 1;
+  position: relative;
+  min-height: 350px;
+  width: 100%;
+  padding: 125px 27px 20px 33px;
+  background-size: cover;
+  border-radius: 12px;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  cursor: pointer !important;
+}
+
+.cardTitle {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.cardDescription {
+  line-height: 18px;
+  font-size: 12px;
+  margin-bottom: 29px;
+}
+
+.cardButton {
+  height: 42px;
+  width: 142px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.cardControls {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  padding: 61px 21px;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.controlButton {
+  width: 72px;
+  height: 59px;
+  background: #f7f6f3;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.controlText {
+  font-size: 10px;
+  line-height: 12px;
+}

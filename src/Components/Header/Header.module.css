@@ -1,0 +1,11 @@
+/*
+ * Copyright ©2020 Akhil Nair - All rights reserved.
+ */
+
+.header {
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

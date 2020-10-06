@@ -1,0 +1,14 @@
+/*
+ * Copyright ©2020 Akhil Nair - All rights reserved.
+ */
+
+.imageCardContainer {
+  font-display: flex;
+  flex-direction: row;
+}
+
+.imageCard {
+  min-height: 130px;
+  background-size: cover;
+  border-radius: 12px;
+}

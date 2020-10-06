@@ -1,0 +1,21 @@
+/*
+ * Copyright ©2020 Akhil Nair - All rights reserved.
+ */
+
+.smallCardContainer {
+  display: block;
+}
+
+.scrollableContainer > div {
+  position: relative !important;
+}
+
+.nonScrollableContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nonScrollableContainer > div {
+  width: 48%;
+}

@@ -1,7 +1,28 @@
+/*
+ * Copyright ©2020 Akhil Nair - All rights reserved.
+ */
+
 /* Styles for App.js */
 .app {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
+}
+
+.cardsContainerWrap {
   background-color: #f7f6f3;
-  overflow: scroll;
+  border-radius: 12px 12px 0px 0px;
+  padding: 24px 20px;
+  min-height: calc(100vh - 60px);
+}
+
+.cardsContainer {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.cardsContainer > div {
+  cursor: pointer;
+  margin-bottom: 15px;
+  user-select: none;
 }
