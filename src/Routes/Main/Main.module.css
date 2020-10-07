@@ -2,8 +2,8 @@
  * Copyright ©2020 Akhil Nair - All rights reserved.
  */
 
-/* Styles for App.js */
-.app {
+/* Styles for Main.js */
+.main {
   height: 100%;
   width: 100vw;
 }
@@ -19,6 +19,7 @@
   width: 100%;
   max-width: 320px;
   margin: 0 auto;
+  position: relative;
 }
 
 .cardsContainer > div {

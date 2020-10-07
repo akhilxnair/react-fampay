@@ -14,6 +14,7 @@ const FetchCardsAPI = async () => {
   catch (err) {
     console.log('Fetch Error :-S', err);
   }
+  return {};
 };
 
 export default FetchCardsAPI;

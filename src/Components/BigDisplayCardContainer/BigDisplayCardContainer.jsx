@@ -3,7 +3,7 @@
  */
 
 // Import Modules
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import PropTypes from 'prop-types';
 
 // Import Hooks
@@ -105,4 +105,4 @@ BigDisplayCard.propTypes = {
   card: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.object, PropTypes.array]).isRequired,
 };
 
-export default BigDisplayCardContainer;
+export default memo(BigDisplayCardContainer);

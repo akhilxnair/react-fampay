@@ -1,4 +1,4 @@
-## A PWA mockup created with React JS and Framer Motion 
+## A PWA mockup created with React JS
 
 ## <a href="https://fampay-akhil-react.netlify.app/">Live Demo</a>
 

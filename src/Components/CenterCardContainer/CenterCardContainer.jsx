@@ -3,7 +3,7 @@
  */
 
 // Import Modules
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 // Import Styles
@@ -37,4 +37,4 @@ CenterCardContainer.propTypes = {
   cardDetails: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.object, PropTypes.array]).isRequired,
 };
 
-export default CenterCardContainer;
+export default memo(CenterCardContainer);
